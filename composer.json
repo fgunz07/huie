@@ -1,0 +1,27 @@
+{
+    "name": "fgunz07/huie",
+    "type": "package",
+    "authors": [
+        {
+            "name": "Rey Mark A. Engada",
+            "email": "reymark.engada@yahoo.com"
+        }
+    ],
+    "require": {
+        "predis/predis": "^1.1"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Fgunz07\\Huie\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fgunz07\\Huie\\HuieServiceProvider",
+                "Fgunz07\\Huie\\HuieBroadcastServiceProvider"
+            ]
+        }
+    }
+}
