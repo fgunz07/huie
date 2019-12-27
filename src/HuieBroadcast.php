@@ -17,16 +17,18 @@ class HuieBroadcast implements ShouldBroadcastNow
 
     public $data;
     private $channel;
+    private $room;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($channel, $data)
+    public function __construct($room, $channel, $data)
     {
         $this->data = $data;
         $this->channel = $channel;
+        $this->room = $room;
     }
 
     /**
@@ -36,6 +38,7 @@ class HuieBroadcast implements ShouldBroadcastNow
      */
     public function broadcastOn()
     {
-        return new PresenceChannel(config('huie.room').'-'.$this->channel);
+        // return new PresenceChannel(config('huie.room').'-'.$this->channel);
+        return new PresenceChannel($this->room.'-'.$this->channel);
     }
 }

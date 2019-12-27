@@ -7,16 +7,13 @@ To install using `composer`
 ```
 
 ##### To use this package
-In your terminal navigate to project folder and publish the config file `php artisan vendor:publish` and you will be ask what `ServiceProvider` to be publish choose `Fgunz07\Huie\HuieServiceProvider`.
+Open ```.env``` create ```HUIE_APP_KEY```, you can get your app key on the service we provided.
 
-After publish completed open your `.env` and add this lines.
-```
-	HUIE_APP_KEY=
-```
 To broadcast just use `Fgunz07\Huie\HuieClient`.
 ```
 	use Fgunz07\Huie\HuieClient;
 
-	HuieClient::broadcast(channel, data)
+	HuieClient::broadcast(room, channel, data);
 ```
 
+###### Note: room is the HUIE_APP_KEY so pass the HUEI_APP_KEY to broadcast function.

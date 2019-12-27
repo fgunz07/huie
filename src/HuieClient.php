@@ -12,8 +12,8 @@ class HuieClient
 	 * @param  Object|Array  $data
 	 * @return void
 	 */
-	public static function broadcast($channel, $data = [])
+	public static function broadcast($room, $channel, $data = [])
 	{
-		event(new HuieBroadcast($channel, $data));
+		event(new HuieBroadcast($room, $channel, $data));
 	}
 }
